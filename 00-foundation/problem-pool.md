@@ -26,5 +26,22 @@ COST I can name: months of delay and wasted money on all sides
 ## [Teammate 3] (@github)
 (3 problems)
 
-## [Teammate 4] (@github)
-(3 problems)
+## Nikoloz Tukhashvili (@Tuxa4Life)
+```
+AUTHOR: Nikoloz Tukhashvili
+WHO I watched: the owner of a small neighborhood grocery shop who lets regular customers buy on credit ("nisia")
+STRUGGLE I saw: debts are written by hand in a paper notebook; finding a customer's page, adding up their total and remembering who has not paid for weeks is slow; customers dispute amounts and there is no record either side trusts
+COST I can name: money that is never collected, and minutes lost on every credit sale while a line waits (exact amounts not yet measured; to be asked in interviews)
+```
+```
+AUTHOR: Nikoloz Tukhashvili
+WHO I watched: students from outside Tbilisi looking for an apartment or a roommate near the university before the semester starts
+STRUGGLE I saw: searching through Facebook groups and listing sites full of outdated posts, fake photos and brokers posing as owners; calling dozens of numbers to learn the place is already taken; no way to find a compatible roommate except posting and hoping
+COST I can name: weeks of searching, broker fees, and sometimes a deposit lost to a bad landlord (exact time and amounts not yet measured; to be asked in interviews)
+```
+```
+AUTHOR: Nikoloz Tukhashvili
+WHO I watched: private tutors (exam prep, languages, programming) who teach several students a week, and the parents who pay them
+STRUGGLE I saw: lessons are scheduled, moved and cancelled through scattered WhatsApp/Messenger chats; the tutor keeps track of who paid for which lessons in their head or in notes; missed and rescheduled lessons cause arguments about what is owed
+COST I can name: unpaid or forgotten lessons, empty slots from last-minute cancellations, and hours each week spent on coordination instead of teaching (exact numbers not yet measured; to be asked in interviews)
+```
