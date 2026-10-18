@@ -39,8 +39,26 @@ WHO I watched: people who seek remote work overseas
 STRUGGLE I saw: due to timezones being vastly different, remote workers having to stay up and ruin their sleep schedules, disrupt daily activities, etc.
 COST I can name: sleeplesness, getting distant from relationships in real life, toll on health
 ```
-## [Teammate 3] (@github)
-(3 problems)
+## Davit Kutateladze (@QutaInParis)
+```
+AUTHOR: Davit Kutateladze
+WHO I watched: Farmers trying to make living by selling natural healthy products
+STRUGGLE I saw: Because of lack of communication between all farmers around country, some small ones are struggling to harvest, reserve or sell products as they have to face some natural or environmental problems alone on their own.
+COST I can name: Farmers time, sweat and hard work, the good food that goes bad because of these problems, environment pollution because of massive amounts ofbad products going to trash.
+```
+```
+AUTHOR: Davit Kutateladze
+WHO I watched: People waiting at banks, clinics, government offices and service centers.
+STRUGGLE I saw: People can not easily predict waiting times when they have little or no time frame throught day for these kind of places. Or old people who have to stand in long not ending queue but not the physical ability to do so.
+COST I can name: Lost working hours, frustration and missed appointmenrs (therefore maybe sometimes even money).
+```
+
+```
+AUTHOR: Davit Kutateladze
+WHO I watched: People managing warranties, receipts, contracts and bills.
+STRUGGLE I saw: Documents are scattered across whole house, mails, paper folders. People do not know where to find or even what to find (do they still have that specific peace of paper or not).
+COST I can name: Time spent searching, missed warranty claims, and avoidable fees.
+```
 
 ## Nikoloz Tukhashvili (@Tuxa4Life)
 ```
