@@ -20,9 +20,25 @@ STRUGGLE I saw: across several city-wide projects, work stopped partway; the qua
 COST I can name: months of delay and wasted money on all sides
 ```
 
-## [Teammate 2] (@github)
-(3 problems)
-
+## [Giorgi Gogichashvili] (@gogicho)
+```
+AUTHOR: Giorgi Gogichashvili
+WHO I watched: residents of my city travelling to a different city
+STRUGGLE I saw: vast amount of people suffering from poor public transportation due to bad schedule planning, few transporting cars, traffic jams, etc.
+COST I can name: being late to the destination; arriving to the destination already tired
+```
+```
+AUTHOR: Giorgi Gogichashvili
+WHO I watched: coworkers at my workplace
+STRUGGLE I saw: due to workplace not having a cafeteria, a lot of coworkers are being forced to starve through the workday or go to high-cost food joints nearby just to get through the day
+COST I can name: waste of money on unhealthy food, toll on ones health due to starving
+```
+```
+AUTHOR: Giorgi Gogichashvili
+WHO I watched: people who seek remote work overseas
+STRUGGLE I saw: due to timezones being vastly different, remote workers having to stay up and ruin their sleep schedules, disrupt daily activities, etc.
+COST I can name: sleeplesness, getting distant from relationships in real life, toll on health
+```
 ## [Teammate 3] (@github)
 (3 problems)
 
