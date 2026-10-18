@@ -37,6 +37,6 @@ Committing this file is signing it.
 | Name | GitHub | Date |
 |---|---|---|
 | Anri Javakhishvili | anrj | 18.10.26 |
-|  | | 18.10.26 |
+| Giorgi Gogichashvili | gogicho | 18.10.26 |
 | | | 18.10.26 |
 | | | 18.10.26 |
