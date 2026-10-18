@@ -38,5 +38,5 @@ Committing this file is signing it.
 |---|---|---|
 | Anri Javakhishvili | anrj | 18.10.26 |
 | Giorgi Gogichashvili | gogicho | 18.10.26 |
-| | | 18.10.26 |
+| Davit Kutateladze | QutaInParis | 18.10.26 |
 | | | 18.10.26 |
