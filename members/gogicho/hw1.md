@@ -6,17 +6,17 @@
 Every real interview you took part in. At least 2 where you were the **asker**.
 
 | Log file (link) | My role (asked / logged / both) | What this interview changed, in one sentence |
-|[`01-discovery/interview-logs/03-daily-commuter.md`](../../01-discovery/interview-logs/03-daily-commuter.md)|asked |realized intercity travelers care less about the ticket price and more about guaranteed departure times, because arriving exhausted defeats the purpose of their trip.|
-|[`01-discovery/interview-logs/04-office-coworker.md`](../../01-discovery/interview-logs/04-office-coworker.md)|both |we both learned that coworkers aren't skipping lunch to save time, they are skipping it because delivery fees for a single person make nearby food overly expensive. |
-|[`01-discovery/interview-logs/05-remote-worker.md`](../../01-discovery/interview-logs/05-remote-worker.md) |logged | discovered the biggest cost of remote overseas work isn't just sleeplessness, but the unpredictability of late-night meetings ruining family relationships. |
+|[`01-discovery/interview-logs/07-daily-commuter.md`](../../01-discovery/interview-logs/07-daily-commuter.md)|asked |realized intercity travelers care less about the ticket price and more about guaranteed departure times, because arriving exhausted defeats the purpose of their trip.|
+|[`01-discovery/interview-logs/08-office-coworker.md`](../../01-discovery/interview-logs/08-office-coworker.md)|both |we both learned that coworkers aren't skipping lunch to save time, they are skipping it because delivery fees for a single person make nearby food overly expensive. |
+|[`01-discovery/interview-logs/09-remote-worker.md`](../../01-discovery/interview-logs/09-remote-worker.md) |logged | discovered the biggest cost of remote overseas work isn't just sleeplessness, but the unpredictability of late-night meetings ruining family relationships. |
 
 **The quote I heard myself that mattered most, with its log number:**
 
-> ""I spent 40 GEL on a mid, super greasy and disgusting burger just so that my stomach wouldn't aggressively make noises during the 2 PM client meeting, and I hated myself for it." — 04-office-coworker.md"
+> ""I spent 40 GEL on a mid, super greasy and disgusting burger just so that my stomach wouldn't aggressively make noises during the 2 PM client meeting, and I hated myself for it." — 08-office-coworker.md"
 
 **One moment I broke the Mom Test, and what I asked instead next time** (name the log):
 
-In 03-daily-commuter.md, I broke the Mom Test by pitching a solution, I asked: "Would an app that shows you exactly how many seats are left in the marshrutka help you avoid being late?" The interviewee just said "Yeah, probably," which gave me false validation. However, next time in 04-office-coworker.md, I asked about past behavior instead: "Walk me through exactly what you did for lunch yesterday, from the moment you realized you were hungry.", which revealed the reality and the exact financial cost they paid.
+In 07-daily-commuter.md, I broke the Mom Test by pitching a solution, I asked: "Would an app that shows you exactly how many seats are left in the marshrutka help you avoid being late?" The interviewee just said "Yeah, probably," which gave me false validation. However, next time in 08-office-coworker.md, I asked about past behavior instead: "Walk me through exactly what you did for lunch yesterday, from the moment you realized you were hungry.", which revealed the reality and the exact financial cost they paid.
 
 ## 2. Pattern journal, Weeks 1 to 4
 
@@ -60,7 +60,7 @@ Each `DECISIONS.md` line you drove or supplied the evidence for. Copy the line e
 
 | The line, copied | What I did for it |
 |Coworkers skipping lunch or paying high single-person delivery fees due to lack of a cafeteria · evidence: 00-foundation/problem-pool.md (AJ, Team), 00-foundation/four-filters-scorecard.md · runner-up: Intercity transit unpredictability · owner: GG|I evaluated our three initial problem spaces (transit, remote work, lunch) using the Four Filters scorecard. I realized the lunch problem was the most actionable for our team's skills and drove the decision to make it our primary focus, leaving transit as the runner-up. However, teams other ideas triumphed in the end. |
-|"We are wrong if the people we interview do not raise the problem or its cost on their own, when they describe the hardest part of the task, before we mention it." verdict: confirmed · evidence: 01-discovery/interview-logs/log-04-office-coworker.md, 01-discovery/interview-logs/log-06-office-coworker.md · owner: GG | I conducted the interviews with Coworker-A and Coworker-B (Logs 04 & 06). By asking open-ended questions about their past behavior ("walk me through your lunch yesterday"), I successfully triggered the prediction when they independently brought up the 40 GEL financial cost and the pain of starving.  |
+|"We are wrong if the people we interview do not raise the problem or its cost on their own, when they describe the hardest part of the task, before we mention it." verdict: confirmed · evidence: 01-discovery/interview-logs/log-08-office-coworker.md, 01-discovery/interview-logs/log-10-office-coworker.md · owner: GG | I conducted the interviews with Coworker-A and Coworker-B (Logs 08 & 10). By asking open-ended questions about their past behavior ("walk me through your lunch yesterday"), I successfully triggered the prediction when they independently brought up the 40 GEL financial cost and the pain of starving.  |
 | | |
 
 ---

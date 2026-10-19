@@ -1,4 +1,4 @@
-# Interview 04 · Office coworker in my building · (code name: Coworker-A)
+# Interview 08 · Office coworker in my building · (code name: Coworker-A)
 
 **Week:** 2 · **Asker:** GG · **Logger:** Team (written from memory; no second logger) · **Consent:** yes
 **Real or practice:** real

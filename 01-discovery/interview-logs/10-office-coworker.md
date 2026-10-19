@@ -1,4 +1,4 @@
-# Interview 04 · Remote worker for US company · (code name: Remote-1)
+# Interview 10 · Remote worker for US company · (code name: Remote-1)
 
 **Week:** 4 · **Asker:** GG · **Logger:** GG (written from memory; no second logger) · **Consent:** yes
 **Real or practice:** real
