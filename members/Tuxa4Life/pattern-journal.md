@@ -1,0 +1,15 @@
+# Pattern journal · Nikoloz Tukhashvili (@Tuxa4Life)
+
+Same prompt every week: Where did you apply this pattern this week, where did you exercise agency beyond your assigned lane, and what did you hack together to test something faster than the plan allowed? Link the DECISIONS.md lines you drove.
+
+## Week 1 · Act like an owner, not a role
+In the team contract I took Build and Discovery together, so that someone owns the link between what we hear and what we build. I wrote my three problem statements from people I had watched myself: the corner-store owner who keeps nisia in a notebook, first-year students from the regions hunting for an apartment near the university, and private tutors who run their whole week through WhatsApp. On each one I wrote "not yet measured" next to the cost instead of guessing a number, so the interviews would have something to fill in. `00-foundation/problem-pool.md`, `00-foundation/team-contract.md`
+
+## Week 2 · Evidence over opinion
+My belief in the problem hypothesis was the nisia one: slow, handwritten debts and records nobody trusts. When interview 01 came back and the seller only raised disputes after we asked, I agreed to drop my own problem instead of arguing for it. Outside my lane, I went through the outreach for the next round and lined up a first-year renter and an English tutor through classmates. Hack: instead of writing outreach messages, I asked two classmates to introduce me in person, which got both interviews booked in one day. `01-discovery/problem-hypothesis.md`, `00-foundation/four-filters-scorecard.md`
+
+## Week 3 · Kill your favorite idea
+I asked both interviews 05 and 06 myself. The tutor problem was my favorite, because I expected unpaid lessons to be the pain. She said herself that the real loss is last-minute cancellations, which she will not charge for, so the "who paid" angle I wrote in the pool was the wrong one. I wrote it down as a weakened belief instead of quietly rewording my pool entry. Hack: during the interview I asked her to open her WhatsApp and count last week's cancellations with me, instead of trusting her estimate. `01-discovery/interview-logs/05-student-renter-first-year.md`, `01-discovery/interview-logs/06-tutor-english-exam-prep.md`
+
+## Week 4 · The prototype is the conversation
+I pulled the quotes from my two logs onto sticky notes for the affinity map and grouped the trust ones together: the renter's mother who would not pay without seeing the place, and the tutor's parent who disputed four lessons against five. Both are the same thing, that there is no record both sides believe. That became a cluster for the documents problem we are investigating. Outside my lane, I wrote down the workarounds from 05 and 06 (Facebook groups, the paper notebook, WhatsApp chats) as competitors for the landscape seed. Hack: I sketched a one-screen "proof of what was agreed" on paper and showed it to a classmate to see whether they understood it without me explaining. `01-discovery/synthesis/affinity-map.md`, `01-discovery/competitive-landscape-seed.md`
