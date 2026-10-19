@@ -1,6 +1,3 @@
-```
-Wk4 · Investigate: [problem, one line] · evidence: 00-foundation/problem-pool.md ([authors]), 00-foundation/four-filters-scorecard.md · runner-up: [problem] · owner: [initials]
-```
-```
-Wk4 · Prediction "<your we-are-wrong-if line>" verdict: <confirmed/weakened/killed> · evidence: 01-discovery/interview-logs/<file>, <file> · owner: <your initials>
-```
+Wk2 · Investigate: how people keep track of and find their documents of all kinds · evidence: 00-foundation/problem-pool.md (Davit 3), 00-foundation/four-filters-scorecard.md · runner-up: how beginner students use AI when learning to program · owner: DK
+Wk3 · Prediction "we are wrong if the people we interview do not raise the problem or its cost on their own, when they describe the hardest part of the task, before we mention it" verdict: confirmed · evidence: 01-discovery/interview-logs/03-house-owner.md, 01-discovery/interview-logs/04-relative-accountant.md · owner: DK
+Wk3 · Drop shop credit (nisia) as a problem to investigate: the seller raised unpaid and disputed amounts only after we asked, and she has no computer · evidence: 01-discovery/interview-logs/01-shopkeeper-corner-store.md · owner: AJ
