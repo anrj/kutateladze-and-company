@@ -21,6 +21,7 @@ Accountabilities below say who makes sure something happens. They do not say who
 - **Standup:** On the weekends
 - **Response window:** messages acknowledged within 1-2 hours, any time of the day
 - **Silent teammate with a deadline near:** Do a wellness check; team stays on contact at all times.
+- **Tracking who did what:** every member commits their own work from their own account; each `DECISIONS.md` line carries the owner's initials; each member keeps a `members/<github-username>/` folder with their pattern journal and homework.
 - **Demo-ready:** any member can screen-share the current product state in any lab, on 2 minutes notice
 
 ## How we decide
