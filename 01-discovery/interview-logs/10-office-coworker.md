@@ -1,4 +1,4 @@
-# Interview 10 · Remote worker for US company · (code name: Remote-1)
+# Interview 10 · Office coworker (HR manager) in our building · (code name: Coworker-B)
 
 **Week:** 4 · **Asker:** GG · **Logger:** GG (written from memory; no second logger) · **Consent:** yes
 **Real or practice:** real

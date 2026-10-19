@@ -4,13 +4,13 @@ One person, not a segment. If a stranger could not pick them out of a room from 
 
 **Name (invented) and one-line sketch:** Tamuna, 38, office administrator in Kutaisi who keeps the documents her family and work depend on.
 
-**Their situation:** She works in an office and handles paperwork all day, and at home she is the one who keeps the family's documents of all kinds: warranties, receipts, contracts, bills, invoices, settlements and official papers. They are spread across a paper folder, a drawer, emails and photos on her phone. She has no single system; she relies on remembering roughly where something is. (Age, job and place are an invented sketch, to be confirmed in interviews.)
+**Their situation:** She works in an office and, at home, is the one who keeps the family's papers: warranties, receipts, bills, contracts and official papers. They sit in a plastic folder in the hallway cabinet, but receipts also end up in drawers, on a kitchen shelf and in pockets (03). At work she collects staff receipts as photos on WhatsApp into a shared Google Drive, and keeps paper originals in a ring binder (04). She has no single system. (Her age, job and city are an invented sketch, to be confirmed in interviews.)
 
-**The moment the problem shows up:** When she needs one specific document and cannot find it: a warranty card when an appliance breaks, a contract before a renewal, an invoice or settlement she needs to check, or a bill she is not sure she paid. She often does not know whether she still has the paper at all.
+**The moment the problem shows up:** The day one specific paper suddenly matters: a boiler stops in the middle of winter and the warranty cannot be found (03), or the end-of-month tax declaration is due and the receipts have to be matched to invoices (04).
 
-**What it costs them:** Time spent searching through the house, mail and folders; missed claims and deadlines; and avoidable fees. (From Davit's pool statement; exact time and amounts are not yet measured and are to be asked in interviews.)
+**What it costs them:** 220 GEL paid for a repair that was still under warranty, plus half a day searching drawers (03); a 500 GEL fine because one paper original could not be produced, and 6 to 8 hours a month chasing missing slips (04).
 
-**What they do about it today:** Paper folders, a drawer, searching her email, and asking family members where something was last seen. No single place that holds everything.
+**What they do about it today:** A hallway folder and drawers at home (03); a shared Google Drive by month, a ring binder and WhatsApp requests to staff for receipt photos at work (04). Neither works reliably: "it's still chaos" (04).
 
 **What they are NOT:**
 - People who already run a document management system for work and use it at home too. They have the habit and the tool, so their problem is different.
@@ -25,6 +25,6 @@ One person, not a segment. If a stranger could not pick them out of a room from 
 | Neighbours and friends of family who manage a household's paperwork | Any member | Not yet |
 | A parent or older relative who keeps papers in folders | Any member | Not yet |
 
-**Evidence so far:** `00-foundation/problem-pool.md`, Davit's third statement (documents of all kinds scattered across the house, mail and paper folders). After interviews: links to logs go here.
+**Evidence so far:** `00-foundation/problem-pool.md` (Davit 3); `01-discovery/interview-logs/03-house-owner.md` (the hallway folder, the 220 GEL boiler repair); `01-discovery/interview-logs/04-relative-accountant.md` (the Drive, the binder, the 500 GEL fine).
 
 This is v1. It will change after your first three interviews, and that is the point.

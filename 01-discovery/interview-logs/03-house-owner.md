@@ -1,6 +1,6 @@
-# Interview 01 · Homeowner managing family household warranties and documents · (code name: Homeowner-1)
+# Interview 03 · Homeowner managing family household warranties and documents · (code name: Homeowner-1)
 
-**Week:** 1 · **Asker:** DK · **Logger:** GL · **Consent:** yes
+**Week:** 1 · **Asker:** DK · **Logger:** GG · **Consent:** yes
 **Real or practice:** real
 
 **Context:** Homeowner and family member (uncle, 48) who handles home maintenance, electronics, renovation contracts, and appliance purchases for a family of four. Interviewed by Davit about how the family keeps track of warranties and bills, and what happened the last time something broke in the house.

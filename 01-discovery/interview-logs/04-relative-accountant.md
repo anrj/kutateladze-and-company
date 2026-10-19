@@ -1,6 +1,6 @@
-# Interview 02 · Small business accountant managing expense documents and invoices · (code name: Accountant-1)
+# Interview 04 · Small business accountant managing expense documents and invoices · (code name: Accountant-1)
 
-**Week:** 2 · **Asker:** DK · **Logger:** GL · **Consent:** yes
+**Week:** 2 · **Asker:** DK · **Logger:** GG · **Consent:** yes
 **Real or practice:** real
 
 **Context:** 36-year-old accountant managing bookkeeping and tax declarations for two small retail and service companies in Tbilisi. Interviewed by Davit about how she collects primary expense documents from employees and reconciles accounts before monthly tax deadlines.

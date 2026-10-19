@@ -18,5 +18,5 @@
 **Frequency:** cancellations every week; payment confusion "a few times a semester"
 **Prediction check:** yes; she raised cancellations and the time spent on WhatsApp herself when we asked about the hardest part of her week
 **Surprise ★:** the biggest money loss is cancellations, not unpaid lessons, and she refuses to charge for them because she is afraid of losing the family
-**Commitment:** agreed we can come back with something to show; offered to introduce one other tutor (math, school students) and one parent (see interview 08)
+**Commitment:** agreed we can come back with something to show; offered to introduce one other tutor (math, school students) and one parent
 **Next:** ask the math tutor about the last cancellation and whether they charge for it; ask a parent how a cancellation looks from their side
