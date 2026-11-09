@@ -9,6 +9,8 @@ Every real interview you took part in. At least 2 where you were the **asker**.
 |[`01-discovery/interview-logs/07-daily-commuter.md`](../../01-discovery/interview-logs/07-daily-commuter.md)|asked |realized intercity travelers care less about the ticket price and more about guaranteed departure times, because arriving exhausted defeats the purpose of their trip.|
 |[`01-discovery/interview-logs/08-office-coworker.md`](../../01-discovery/interview-logs/08-office-coworker.md)|both |we both learned that coworkers aren't skipping lunch to save time, they are skipping it because delivery fees for a single person make nearby food overly expensive. |
 |[`01-discovery/interview-logs/09-remote-worker.md`](../../01-discovery/interview-logs/09-remote-worker.md) |logged | discovered the biggest cost of remote overseas work isn't just sleeplessness, but the unpredictability of late-night meetings ruining family relationships. |
+|[`01-discovery/interview-logs/03-house-owner.md`](../../01-discovery/interview-logs/03-house-owner.md) |logged | found out reason for the financial loss. |
+|[`01-discovery/interview-logs/04-relative-accountant.md`](../../01-discovery/interview-logs/04-relative-accountant.md) |logged | found out the company was penalized even though they had all proper docummentation.|
 
 **The quote I heard myself that mattered most, with its log number:**
 
