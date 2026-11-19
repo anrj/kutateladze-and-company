@@ -485,7 +485,7 @@ All 5 steps of `03-build/mvp-boundary.md` map 1:1 to existing schema events (zer
 ## Team Sign-off
 
 - Giorgi Gogichashvili (`@gogicho`) - Discovery & Metrics - [18.11.2026]
-- 
+- Davit Kutateladze (`@QutaInParis`) - Sprint 1 - [19.11.2026]
 -
 -
 

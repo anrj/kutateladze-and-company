@@ -695,7 +695,7 @@ We would only consider upgrading if beta scale exceeds `500,000+` events/month o
 ## Team Sign-off
 
 - Giorgi Gogichashvili (`@gogicho`) - Analytics Lead - 18.11.2026
-- 
+- Davit Kutateladze (`@QutaInParis`) - [19.11.2026]
 -
 -
 
