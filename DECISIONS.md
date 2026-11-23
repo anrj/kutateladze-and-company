@@ -10,3 +10,4 @@ Wk6 · Lock MVP boundary to 5-step solo keeper journey (open workspace -> captur
 Wk6 · Catch-up track: Prototype v1 not built yet, so Sprint 1 runs 3 user-testing sessions on the first deployed S1–S5 journey screen (or quick clickable v1) and logs findings before Week 7 lab · evidence: 03-build/sprints/sprint-1.md · owner: DK
 Wk7 · Decided to rework the architecture during and after the sprint ( · evidence: 03-build/architecture/architecture.md · owner: AJ
 Wk7 · Changes mid sprint dure to a a decision to gravitate towards more general ocr approach than to focus on warranties and receipts, update appended as evidence 03-build/sprints/sprint-1.md · owner: AJ
+Wk7 · Sync 03-build/analytics/event-schema.md (v1.2) to match the 5 implemented constants in app/events.json and complete independent phone reviewer walk across all 5 live PostHog events · evidence: 03-build/analytics/event-schema.md, 03-build/sprints/sprint-1.md, app/events.json · owner: GG

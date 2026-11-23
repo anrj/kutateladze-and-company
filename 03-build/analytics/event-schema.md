@@ -3,7 +3,7 @@
 **Team:** Kutateladze & Co.
 **Date:** 24.11.2026
 **Product:** Nuskha (ნუსხა): Georgian document search & Q&A
-**Version:** 1.1 (MVP, Sprint 1)
+**Version:** 1.2 (MVP, Sprint 1)
 
 ---
 
@@ -59,9 +59,9 @@ Internal and test traffic is excluded with PostHog's **"Filter out internal and 
 
 ## Core Events (4 for MVP)
 
-### Event 1: Document Captured
+### Event 1: Document Uploaded
 
-**Event name:** `document_captured`
+**Event name:** `document_uploaded`
 **Fired by:** Backend (`posthog-python`), after the file is stored and its database row is committed
 **Journey step:** 2 · Capture
 
@@ -76,7 +76,7 @@ Internal and test traffic is excluded with PostHog's **"Filter out internal and 
 ### Event 2: Document Indexed
 
 **Event name:** `document_indexed`
-**Fired by:** Backend, after indexing finishes (success **or** failure) and the status is committed
+**Fired by:** Backend (`posthog-python`), after indexing finishes (success **or** failure) and the status is committed
 **Journey step:** 3 · Activation
 
 | Property | Type | Required | Description | Example |
@@ -92,27 +92,39 @@ Internal and test traffic is excluded with PostHog's **"Filter out internal and 
 
 ---
 
-### Event 3: Document Searched
+### Event 3: Question Asked
 
-**Event name:** `document_searched`
+**Event name:** `question_asked`
 **Fired by:** Frontend (`posthog-js`), after the server returns the answer
 **Journey step:** 4 · Lookup
 
 | Property | Type | Required | Description | Example |
 |---|---|---|---|---|
-| `search_id` | string (UUID) | Yes | ID linking this search to a retrieval | `"a81e…"` |
+| `search_id` | string (UUID) | Yes | ID linking this question, answer, and source open | `"a81e…"` |
 | `query_length_chars` | integer | Yes | Length of the question (never the text itself) | `27` |
 | `latin_typed` | boolean | Yes | Question typed in Latin letters (translit) | `true` |
-| `results_count` | integer | Yes | Cited sources returned (`0` = nothing found) | `3` |
-| `answer_mode` | enum | Yes | How the answer was produced | `"llm"`, `"passage_only"`, `"llm_unavailable"` |
-| `latency_ms` | integer | Yes | Server time to answer | `2300` |
 
 ---
 
-### Event 4: Document Retrieved ⭐ (North Star event)
+### Event 4: Answer Returned ⭐ 
 
-**Event name:** `document_retrieved`
-**Fired by:** Frontend, after the server records the open (`source_opens` row committed)
+**Event name:** `answer_returned`
+**Fired by:** Backend / Frontend after `/ask` returns the answer
+**Journey step:** 4 · Lookup result
+
+| Property | Type | Required | Description | Example |
+|---|---|---|---|---|
+| `search_id` | string (UUID) | Yes | Same ID as `question_asked` | `"a81e…"` |
+| `results_count` | integer | Yes | Cited sources returned (`0` = nothing found) | `3` |
+| `answer_mode` | enum | Yes | How the answer was produced | `"llm"`, `"passage_only"`, `"llm_unavailable"` |
+| `latency_ms` | integer | Yes | Server time to answer | `2300` | 
+
+---
+
+### Event 5: Source Opened ⭐ (North Star event)
+
+**Event name:** `source_opened` (`SOURCE_OPENED`)
+**Fired by:** Frontend (`posthog-js`), after the server commits `/source-opens`
 **Journey step:** 5 · North Star
 
 | Property | Type | Required | Description | Example |
@@ -123,21 +135,22 @@ Internal and test traffic is excluded with PostHog's **"Filter out internal and 
 | `citation_rank` | integer | Yes | Position of the opened source in the answer (1 = top) | `1` |
 | `retrieval_time_seconds` | integer | Yes | Seconds from submitting the question to opening the source | `9` |
 
+
 **Example payload (as stored in PostHog):**
 
 ```json
 {
-  "event": "document_retrieved",
-  "distinct_id": "9f82c1a4…",
-  "timestamp": "2026-11-25T16:40:12Z",
-  "properties": {
-    "document_id": "3f1c…",
-    "search_id": "a81e…",
-    "page": 2,
-    "citation_rank": 1,
-    "retrieval_time_seconds": 9,
-    "environment": "production",
-    "source": "browser"
+  "event": "source_opened",
+      "distinct_id": "9f82c1a4…",
+      "timestamp": "2026-11-25T16:40:12Z",
+      "properties": {
+        "document_id": "3f1c…",
+        "search_id": "a81e…",
+        "page": 2,
+        "citation_rank": 1,
+        "retrieval_time_seconds": 9,
+        "environment": "production",
+        "source": "browser"
   }
 }
 ```
@@ -148,7 +161,7 @@ Internal and test traffic is excluded with PostHog's **"Filter out internal and 
 
 ### North Star Metric
 
-**Weekly Successful Document Retrievals** = count of `document_retrieved` in the last 7 days, internal users excluded.
+**Weekly Successful Document Retrievals** = count of `source_opened` in the last 7 days, internal users excluded.
 
 A retrieval means the user found the right document and opened it at the cited page: the moment the product saved them from searching through files by hand.
 
@@ -178,10 +191,11 @@ Supporting: median `retrieval_time_seconds` (pitch target < 15 s), share of `doc
 
 | Event | Layer | Code location | Fires after |
 |---|---|---|---|
-| `document_captured` | Backend | `app/engine/nuskha/api.py` (upload) | File stored + DB row committed |
+| `document_uploaded` | Backend | `app/engine/nuskha/api.py` (upload) | File stored + DB row committed |
 | `document_indexed` | Backend | `app/engine/nuskha/api.py` (upload) | Status committed (`ready` or `failed`) |
-| `document_searched` | Frontend | `app/web/src/App.tsx` (ask) | `/ask` returned 200 |
-| `document_retrieved` | Frontend | `app/web/src/App.tsx` (open source) | `/source-opens` returned 200 |
+| `question_asked` | Frontend / Backend | `app/web/src/App.tsx` / `/ask` | Question submitted / accepted |
+| `answer_returned` | Frontend / Backend | `app/web/src/App.tsx` (ask) | `/ask` returned 200 |
+| `source_opened` | Frontend | `app/web/src/App.tsx` (open source) | `/source-opens` returned 200 |
 
 **Rules:**
 - Event names come from `app/events.json` (one file shared by engine and web). Never type them inline.
@@ -224,7 +238,7 @@ WHERE event = 'document_retrieved' AND properties.environment = 'production'
 
 | Date | DB count | PostHog count | Difference | Note |
 |---|---|---|---|---|
-| | | | | |
+|23.11.2026|5|5|0| Verified live in PostHog Activity (GG)|
 
 A small PostHog shortfall is expected: ad blockers drop some browser events. Server events (`document_captured`, `document_indexed`) are not affected.
 
@@ -234,11 +248,12 @@ A small PostHog shortfall is expected: ad blockers drop some browser events. Ser
 
 | Event | Per day | Per month |
 |---|---|---|
-| `document_captured` | 15–20 | ~500 |
+| `document_uploaded` | 15–20 | ~500 |
 | `document_indexed` | 15–20 | ~500 |
-| `document_searched` | 25–35 | ~900 |
-| `document_retrieved` | 12–18 | ~450 |
-| **Total** (+ pageviews) | **~100** | **~3,000** |
+| `question_asked` | 25–35 | ~900 |
+| `answer_returned` | 25–35 | ~900 |
+| `source_opened` | 12–18 | ~450 |
+| **Total** (+ pageviews) | **~115** | **~3,500** |
 
 Well within PostHog's free tier.
 
@@ -246,10 +261,10 @@ Well within PostHog's free tier.
 
 ## Pre-Launch Checklist
 
-- [ ] Every event fires once (no duplicate frontend + backend firing)
-- [ ] All required properties present; names match `app/events.json`
-- [ ] Events appear in PostHog Activity within 60 seconds, from production
-- [ ] No PII in any payload (no filenames, question text, snippets)
+- [x] Every event fires once (no duplicate frontend + backend firing)
+- [x] All required properties present; names match `app/events.json`
+- [x] Events appear in PostHog Activity within 60 seconds, from production
+- [x] No PII in any payload (no filenames, question text, snippets)
 - [ ] Internal-user filter on (`environment = development` excluded)
 - [ ] Reconcile check filled in: PostHog count ≈ database count
 
@@ -259,10 +274,10 @@ Well within PostHog's free tier.
 
 | Step | Event | Fired by | Owner | Live |
 |---|---|---|---|---|
-| 2 · Capture | `document_captured` | Backend (`posthog-python`) | AJ | ☐ |
-| 3 · Activation | `document_indexed` | Backend (`posthog-python`) | AJ | ☐ |
-| 4 · Lookup | `document_searched` | Frontend (`posthog-js`) | AJ | ☐ |
-| 5 · North Star | `document_retrieved` | Frontend (`posthog-js`) | AJ | ☐ |
+| 2 · Capture | `document_captured` | Backend (`posthog-python`) | AJ | ☑ |
+| 3 · Activation | `document_indexed` | Backend (`posthog-python`) | AJ | ☑ |
+| 4 · Lookup | `document_searched` | Frontend (`posthog-js`) | AJ | ☑ |
+| 5 · North Star | `document_retrieved` | Frontend (`posthog-js`) | AJ | ☑ |
 | Acquisition | `user_signup_started`, `user_signup_completed` | — | — | Deferred to Sprint 2 (no accounts) |
 | Retention | `user_session_started` | — | — | Dropped: PostHog retention uses existing events |
 | Referral | `workspace_invite_sent` | — | — | Deferred to Sprint 2 (no workspaces) |
@@ -271,7 +286,7 @@ Well within PostHog's free tier.
 
 ## Team Sign-off
 
-- Giorgi Gogichashvili (`@gogicho`): Discovery & Metrics, [18.11.2026]
+- Giorgi Gogichashvili (`@gogicho`): Discovery & Metrics, [18.11.2026 / 23.11.2026]
 - Davit Kutateladze (`@QutaInParis`): Sprint 1, [19.11.2026]
 - Anri Javakhishvili (`@anrj`): [23.11.2026]
 
@@ -286,6 +301,7 @@ Anri Javakhishvili (`@anrj`): [X]
 |---|---|---|---|
 | 18.11.2026 | 1.0 | Initial 8-event MVP schema (ProofVault) | Kutateladze & Co. |
 | 24.11.2026 | 1.1 | Removed standard properties PostHog records automatically (`event_id`, `timestamp`, `session_id`, `platform`, `user_id`) and `workspace_id`; `is_internal_test` replaced by `environment` + PostHog internal-user filter. `document_indexed` properties changed from receipt metadata to indexing results. `user_session_started` dropped. North Star simplified to a weekly count. Added reconcile check. | Anri Javakhishvili |
+| 23.11.2026 | 1.2 | Synced all 5 event names across schema, SQL/HogQL reconcile, and KPIs to match `app/events.json` of the deployed project. (`document_uploaded`, `document_indexed`, `question_asked`, `answer_returned`, `source_opened`); marked all 5 events verified live in PostHog Activity. | Giorgi Gogichashvili |
 
 ---
 

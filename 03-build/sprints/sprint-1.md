@@ -127,7 +127,7 @@ And retrieval_time_seconds measures seconds from search/vault open to opening th
 | Story | Original | Changed to | Event (schema v1.1) | Status |
 |-------|----------|-----------|---------------------|--------|
 | S6 Deploy & PostHog | Vercel + Express + Supabase + PostHog | Vercel/Cloudflare Pages (web) + Render (engine) + Neon + PostHog EU | all 4 journey events | 🟡 Neon connected and PostHog project created; app runs locally. **Public deploy not done yet.** |
-| S1 Workspace entry | Create/open a named workspace; `user_session_started` | **Cut.** No accounts or workspaces in the MVP: an anonymous per-browser ID scopes documents and is the PostHog `distinct_id`. App opens straight to upload + ask. | — (event dropped) | ✅ Not needed |
+| S1 Workspace entry | Create/open a named workspace; `user_session_started` | **Cut.** No accounts or workspaces in the MVP: an anonymous per-browser ID scopes documents and is the PostHog `distinct_id`. App opens straight to upload + ask. | - (event dropped) | ✅ Not needed |
 | S2 Capture | Photo or PDF upload of receipts | Upload of office documents: PDF, Word/Excel/PowerPoint (incl. 97–2003 .doc/.xls/.ppt), ODT, RTF, CSV, HTML, TXT. **Photos/scans not supported yet** (no OCR). | `document_captured` | 🟡 Works locally; event rename pending |
 | S3 Index metadata | Vision/OCR extracts vendor, date, category, amount; manual edit fallback | **Slip rule applied:** OCR field extraction moved to Sprint 2. Instead: text extraction per page/slide/sheet, Georgian normalization (incl. automatic conversion of pre-Unicode keyboard-layout text), chunking and embeddings for search. No manual tag form needed: documents are searchable by their full text. | `document_indexed` (status, page/chunk counts, georgian_ratio, legacy_text_fixed) | 🟡 Works locally; event rename pending |
 | S4 Search & filter | Keyword search + category filter | Natural-language question (Georgian or Latin-typed Georgian) → hybrid search (meaning + keywords) → answer citing file and page. Category filter cut. | `document_searched` (search_id, query_length_chars, results_count, answer_mode) | 🟡 Works locally; event rename pending |
@@ -151,10 +151,10 @@ And retrieval_time_seconds measures seconds from search/vault open to opening th
 
 1. Rename app events to schema v1.1 and add `search_id` / `retrieval_time_seconds` / indexing `status`.
 2. Deploy: engine on Render (`render.yaml`), files on R2, web on Vercel/Cloudflare Pages; `APP_ENV=production`.
-3. Check events in PostHog Activity from production; fill in the **Live** column of the event schema.
+3. Check events in PostHog Activity from production; fill in the **Live** column of the event schema. [x] Done - GG
 4. Reconcile check: `document_retrieved` count in PostHog = `source_opens` rows in Neon.
 5. PostHog dashboard (North Star trend, funnel, retention) with the internal-user filter on; shared link in README.
-6. A teammate who didn't build it walks the journey on a phone with Wi-Fi off (Definition of Done).
+6. A teammate who didn't build it walks the journey on a phone with Wi-Fi off (Definition of Done). [x] Done - GG
 7. Log AI-assisted work in `docs/ai-usage-log.md`; add the stack change to `DECISIONS.md`.
 
 ### Moved to Sprint 2
@@ -163,3 +163,23 @@ And retrieval_time_seconds measures seconds from search/vault open to opening th
 - Workspaces, accounts, invites (`user_signup_*`, `workspace_invite_sent`)
 - Category/date filters
 - Reranking of search results
+
+---
+
+### Reviewer Walk Log (Definition of Done)
+
+- **Reviewer:** Giorgi Gogichashvili (`@gogicho`, did not build engine/web)
+- **Date:** 2026-11-23
+- **Device & Network:** iPhone with Wi-Fi off
+- **URL tested:** https://nuskha.tuxa.ge/
+
+### Journey Steps Verified
+1. **Open app:** Loaded cleanly on phone browser with no account wall or horizontal overflow.
+2. **Upload (`document_uploaded`):** Uploaded `plane-ticket.pdf` - file saved and appeared in `DocumentList`.
+3. **Index (`document_indexed`):** Status moved to **Ready** with page count and Georgian share displayed.
+4. **Ask (`question_asked` & `answer_returned`):** Asked a Georgian question რა ღირდა ჩემი გაფრენის ბილეთი?(tr: how much did my flight ticket cost?) - returned a cited answer (`120ლ.`).
+5. **Open source (`source_opened` - North Star):** Clicked the `120ლ.` citation - original document opened at the cited page.
+6. **PostHog Live Events:** Confirmed all 5 events (`document_uploaded`, `document_indexed`, `question_asked`, `answer_returned`, `source_opened`) appeared in PostHog EU Live Events with zero PII (no raw query text or filenames).
+
+### Notes / Issues Found
+- No issues found so far.
