@@ -8,3 +8,5 @@ Wk5 · Problem statement v2 (decision: REFINE, confidence: Medium): people alrea
 Wk5 · Set North Star Metric to "Weekly Successful Document Retrievals" (found and opened/exported in <= 60s; Wk8 MVP target: 75/wk) · evidence: 02-analytics/north-star-metric.md · owner: GG
 Wk6 · Lock MVP boundary to 5-step solo keeper journey (open workspace -> capture -> index -> search -> retrieve in <= 60s); cut WhatsApp bot, multi-user invites, expiry alerts, full OAuth/settings, Drive sync, and tax bundles · evidence: 03-build/mvp-boundary.md, 01-discovery/synthesis/patterns-analysis.md · owner: DK
 Wk6 · Catch-up track: Prototype v1 not built yet, so Sprint 1 runs 3 user-testing sessions on the first deployed S1–S5 journey screen (or quick clickable v1) and logs findings before Week 7 lab · evidence: 03-build/sprints/sprint-1.md · owner: DK
+Wk7 · Decided to rework the architecture during and after the sprint ( · evidence: 03-build/architecture/architecture.md · owner: AJ
+Wk7 · Changes mid sprint dure to a a decision to gravitate towards more general ocr approach than to focus on warranties and receipts, update appended as evidence 03-build/sprints/sprint-1.md · owner: AJ

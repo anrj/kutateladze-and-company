@@ -110,3 +110,56 @@ And retrieval_time_seconds measures seconds from search/vault open to opening th
 ---
 
 **Slip rule, written now:** If **S3** (automated Vision/OCR extraction) is not working reliably by the evening before the Week 7 lab, AI extraction moves to Sprint 2 and **S3** ships with a fast 3-field manual tag form (vendor, date, category) on upload (`indexing_method: "manual"`). **S4** (`document_searched`) and **S5** (`document_retrieved`) stay in Sprint 1 no matter what, because without searching and opening legible proof in under 60 seconds the value hypothesis cannot be tested.
+---
+
+## Sprint Changes Log
+
+*Original plan above is kept as written. This section records what changed during the sprint and why.*
+
+### 24.11.2026 · Scope pivot: Georgian document Q&A (Nuskha)
+
+**Decision:** The product moved from a receipt/warranty photo vault with OCR field extraction to **search and question-answering over Georgian office documents** (contracts, invoices, HR orders, spreadsheets), with every answer citing the exact file and page. Reason: the value hypothesis is the same (find the right document in seconds instead of digging through folders), but the Georgian-specific problems (pre-Unicode text, translit queries, word endings) are a stronger differentiator than generic receipt OCR. See `03-build/architecture/architecture.md` and `DECISIONS.md`.
+
+**Stack change:** React + Express + Supabase → Solid 2 + Vite (web), Python FastAPI (engine), Neon Postgres with pgvector/pg_trgm, Gemini API, Cloudflare R2 for files. Event schema updated to v1.1 (4 events), see `03-build/analytics/event-schema.md`.
+
+### Story changes
+
+| Story | Original | Changed to | Event (schema v1.1) | Status |
+|-------|----------|-----------|---------------------|--------|
+| S6 Deploy & PostHog | Vercel + Express + Supabase + PostHog | Vercel/Cloudflare Pages (web) + Render (engine) + Neon + PostHog EU | all 4 journey events | 🟡 Neon connected and PostHog project created; app runs locally. **Public deploy not done yet.** |
+| S1 Workspace entry | Create/open a named workspace; `user_session_started` | **Cut.** No accounts or workspaces in the MVP: an anonymous per-browser ID scopes documents and is the PostHog `distinct_id`. App opens straight to upload + ask. | — (event dropped) | ✅ Not needed |
+| S2 Capture | Photo or PDF upload of receipts | Upload of office documents: PDF, Word/Excel/PowerPoint (incl. 97–2003 .doc/.xls/.ppt), ODT, RTF, CSV, HTML, TXT. **Photos/scans not supported yet** (no OCR). | `document_captured` | 🟡 Works locally; event rename pending |
+| S3 Index metadata | Vision/OCR extracts vendor, date, category, amount; manual edit fallback | **Slip rule applied:** OCR field extraction moved to Sprint 2. Instead: text extraction per page/slide/sheet, Georgian normalization (incl. automatic conversion of pre-Unicode keyboard-layout text), chunking and embeddings for search. No manual tag form needed: documents are searchable by their full text. | `document_indexed` (status, page/chunk counts, georgian_ratio, legacy_text_fixed) | 🟡 Works locally; event rename pending |
+| S4 Search & filter | Keyword search + category filter | Natural-language question (Georgian or Latin-typed Georgian) → hybrid search (meaning + keywords) → answer citing file and page. Category filter cut. | `document_searched` (search_id, query_length_chars, results_count, answer_mode) | 🟡 Works locally; event rename pending |
+| S5 Retrieve proof ⭐ | Open/download original in < 60 s | Click a cited source → original opens at the cited page; the open is stored in `source_opens` (North Star rows for the reconcile check). | `document_retrieved` (document_id, search_id, page, citation_rank, retrieval_time_seconds) | 🟡 Works locally; `retrieval_time_seconds` + rename pending |
+
+### Acceptance criteria updates
+
+- **S2:** "Given an open ProofVault workspace" → "Given the public app URL". "Take a photo" removed until OCR ships. `capture_channel` and `contributor_role` removed from the event (no camera flow, no workspace roles).
+- **S3:** Vendor/date/category/amount fields replaced by: document shows **Ready** with page count and Georgian share; legacy-text badge when pre-Unicode Georgian was converted; failures show the reason (e.g. scanned PDF without text).
+- **S4:** "type a vendor keyword or select a category" → "ask a question in Georgian or translit"; "matching documents appear in under 2 seconds" → "an answer with at least one cited source appears" (Gemini answer time varies; if the AI is busy, the best matching passage is shown instead). Raw query text still never sent to PostHog.
+- **S5:** `document_category`, `result_action`, `document_age_days` removed from the event; `page` and `citation_rank` added.
+
+### Done so far (outside the story table)
+
+- End-to-end tests for the full journey (upload → index → ask → cited answer → open source) on Postgres: 36 passing.
+- Georgian handling: Mtavruli folding, translit queries, pre-Unicode text detection by content, trigram matching for word endings.
+- Resilience: retries and fallback Gemini models; the journey still completes if the AI is overloaded.
+- Per-user rate limit on questions (cost protection for the public URL).
+
+### Remaining before the Week 7 gate
+
+1. Rename app events to schema v1.1 and add `search_id` / `retrieval_time_seconds` / indexing `status`.
+2. Deploy: engine on Render (`render.yaml`), files on R2, web on Vercel/Cloudflare Pages; `APP_ENV=production`.
+3. Check events in PostHog Activity from production; fill in the **Live** column of the event schema.
+4. Reconcile check: `document_retrieved` count in PostHog = `source_opens` rows in Neon.
+5. PostHog dashboard (North Star trend, funnel, retention) with the internal-user filter on; shared link in README.
+6. A teammate who didn't build it walks the journey on a phone with Wi-Fi off (Definition of Done).
+7. Log AI-assisted work in `docs/ai-usage-log.md`; add the stack change to `DECISIONS.md`.
+
+### Moved to Sprint 2
+
+- OCR for photos and scanned PDFs (Gemini vision), restoring the camera capture flow
+- Workspaces, accounts, invites (`user_signup_*`, `workspace_invite_sent`)
+- Category/date filters
+- Reranking of search results
