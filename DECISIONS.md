@@ -11,3 +11,4 @@ Wk6 · Catch-up track: Prototype v1 not built yet, so Sprint 1 runs 3 user-testi
 Wk7 · Decided to rework the architecture during and after the sprint ( · evidence: 03-build/architecture/architecture.md · owner: AJ
 Wk7 · Changes mid sprint dure to a a decision to gravitate towards more general ocr approach than to focus on warranties and receipts, update appended as evidence 03-build/sprints/sprint-1.md · owner: AJ
 Wk7 · Sync 03-build/analytics/event-schema.md (v1.2) to match the 5 implemented constants in app/events.json and complete independent phone reviewer walk across all 5 live PostHog events · evidence: 03-build/analytics/event-schema.md, 03-build/sprints/sprint-1.md, app/events.json · owner: GG
+Wk7 · Deploy the app on Cloudflare at https://nuskha.tuxa.ge/ so the journey runs at a public production URL (gate rungs 1 and 2) · evidence: https://github.com/anrj/nuskha/commit/13d3f6cd381422c0dbecc84a1143fea08e241b5d, 03-build/sprints/sprint-2.md · owner: NT
