@@ -283,6 +283,14 @@ Well within PostHog's free tier.
 | Retention | `user_session_started` | — | — | Dropped: PostHog retention uses existing events |
 | Referral | `workspace_invite_sent` | — | — | Deferred (no workspaces) |
 
+| Event | Triggered in Story 6 Walk (`nuskha.tuxa.ge`) | Verified in PostHog Activity By | Live? |
+|---|---|---|---|
+| `document_uploaded` | Uploaded test doc on mobile data | DK (walked), NT (read aloud) | Yes ([2026-11-25]) |
+| `document_indexed` | Status reached Ready | DK (walked), NT (read aloud) | Yes ([2026-11-25]) |
+| `question_asked` | Submitted Georgian query (no raw text logged) | DK (walked), NT (read aloud) | Yes ([2026-11-25]) |
+| `answer_returned` | Cited answer rendered on screen | DK (walked), NT (read aloud) | Yes ([2026-11-25]) |
+| `source_opened` | Clicked citation and opened source page | DK (walked), NT (read aloud) | Yes ([2026-11-25]) |
+
 ---
 
 ## Team Sign-off
