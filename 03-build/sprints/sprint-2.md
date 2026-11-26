@@ -31,7 +31,7 @@ Slip rule: fired. S3 automated OCR extraction moved to Sprint 2. S4 and S5 staye
 
 | Initials | Hours free | When, specifically |
 |---|---|---|
-| DK | [ ] | [ ] |
+| DK | [4 ] | [ 11/26/2026 18:00-22:00] |
 | AJ | [ ] | [ ] |
 | GG | 4 | [ ] |
 | NT | [ ] | [ ] |
@@ -81,3 +81,39 @@ Mid-week look: GG opens the dashboard on thursday and writes one line here: what
 Add this to the bottom of `DECISIONS.md` (replace it with the "Gate passed" form from the template when it closes, linking the old line):
 
 Wk7 · Gate open at rung 1: missing public deploy of engine and web app, event rename to schema v1.1, reconcile and dashboard, owners and times in sprint-2.md · evidence: 03-build/sprints/sprint-2.md · owner: AJ
+
+
+### DK Execution & Review Log (Sprint 2)
+
+#### Story 6 · Production Phone Walk (Owner: DK · Reviewer: NT)
+- **Date:** 2026-11-24
+- **Device & Network:** iPhone, mobile data (Wi-Fi off)
+- **URL tested:** `https://nuskha.tuxa.ge/`
+- **Second teammate reading PostHog Activity aloud:** NT
+- **Journey walked:**
+  1. Opened `https://nuskha.tuxa.ge/` on mobile browser — loaded cleanly with no account wall or horizontal overflow.
+  2. Uploaded `invoice-sample.pdf` → `document_uploaded` confirmed live in PostHog Activity by NT.
+  3. Document reached **Ready** → `document_indexed` confirmed live in PostHog Activity by NT.
+  4. Asked Georgian question `"რა თანხაა მითითებული ინვოისში?"` → `question_asked` and `answer_returned` confirmed live by NT (zero raw query text / zero PII).
+  5. Tapped citation `[1]` and opened source page → `source_opened` confirmed live by NT.
+- **Verdict:** PASS
+
+#### Story 3 Review · Repo `app/`, `.env.example`, & `README.md` (Owner: AJ · Reviewer: DK)
+- **Checked on `main`:**
+  - `app/` directory present in this repo: Yes
+  - `app/.env.example` present with no real secrets in files or git history: Yes
+  - `README.md` live-product URL (`https://nuskha.tuxa.ge/`) filled in: Yes
+- **Review verdict:** PASS
+
+#### Story 5 Review · Public PostHog Dashboard (Owner: GG · Reviewer: DK)
+- **Checked in Incognito (logged-out) browser:**
+  - Shared no-login dashboard link present in `README.md` and loads without login: Yes
+  - Three tiles visible (North Star trend, journey steps, retention): Yes
+  - Internal-user filter enabled on all three tiles: Yes
+- **Review verdict:** PASS
+
+#### Story 7 Review · Catch-Up Usability Sessions (Owner: NT · Reviewer: DK)
+- **Checked `02-design/user-testing/usability-findings.md`:**
+  - 3 sessions logged with real ICP testers (non-classmates): Yes
+  - Exact task read without explaining UI, timed timestamps, verbatim quotes, and Pass/Fail verdict vs. rule included: Yes
+- **Review verdict:** PASS
